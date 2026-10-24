@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*logo*/
+#head{
+  justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 30px
+
+}
+#head img{
+    width: 150px;
+}
+#logo-text{
+text-align: center;
+  max-width: 480px;
+  padding: 20px;
+}
+.subtitulo-superior {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #72a138; 
+  margin: 0 0 -8px 0;
+  letter-spacing: 0.3px;
+}
+
+.titulo-principal {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #00529b; 
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.linea-divisoria {
+  width: 100%;
+  height: 2px;
+  background-color: #72a138;
+  margin: 6px 0 10px 0;
+}
+
+.lema-inferior {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+/*FIN DE LOGO*/
+#main_bar{
+    background-color: rgb(159, 232, 159);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+#main_bar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 300px;
+    width: 100%;
+    gap: 15px;
+    list-style: none;
+}
+
+#main_bar button{
+    all: unset;
+
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #4375ca;
+    cursor: pointer;
+    z-index: 1;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+/*FIN DE Navegador de opciones*/
+
+/*Titutlos h2*/
+.button-main{
+  display: flexbox;
+  padding: 2rem;
+  font-size: 25px;
+  color: #1148a7;
+
+  font-family: "Orbitron", sans-serif;
+}
+/*Texto*/
+.button-main p{
+  font-size: 25px;
+  color: black;
+
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Especialidades*/
