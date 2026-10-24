@@ -102,8 +102,8 @@ text-align: center;
 
 /*Titutlos h2*/
 .button-main{
-  display: flexbox;
-  padding: 2rem;
+  display: flex;
+  padding: 2rem ;
   font-size: 25px;
   color: #1148a7;
 
@@ -113,8 +113,30 @@ text-align: center;
 .button-main p{
   font-size: 25px;
   color: black;
-
+  display: flex;
+  padding: 2rem;
 font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Especialidades*/
+#modal-info1 {
+    width: min(90%, 450px);
+    padding: 24px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 20%);
+}
+ 
+#modal-info1::backdrop {
+    background-color: rgb(0 0 0 / 55%);
+}
+ 
+#modal-info1 h2 {
+    margin-top: 0;
+}
+ 
+#modal-close {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

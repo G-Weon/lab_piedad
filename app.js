@@ -2,19 +2,17 @@
 const modal = document.getElementById("modal-info1");
 const titulo = document.getElementById("modal-title");
 const descripcion = document.getElementById("modal-description");
-const cerrarModal = document.getElementById("modal-close");
+const botonCerrar = document.getElementById("modal-close");
 
 
 //Catalago
 const especialidades = {
     dialisis:{
-        especiaidad: "Dialisis",
+        nombre: "Dialisis",
         descripcion: "oidfhjds"
     }
 }
 
-// Abrir el modal según la especialidad seleccionada
-document.getElementById("especialidades")
 document.addEventListener("click", (evento) => {
 
         const boton = evento.target.closest("[data-especialidad]");
