@@ -9,6 +9,7 @@
             <script src="app.js" defer></script>
 </head>
 <body>
+    <div id="logf">
     <header id="head">
         <title>Laboratorio clinico La Piedad</title>
         <img src="imagen/Logo.png">
@@ -24,19 +25,19 @@
     </header>
     <nav id="main_bar">
         <ul>
-        <li><button> Acerca de </button></li>
-        <li><button>Contacto</button></li>
-        <li><button> Especialidades </button></li>
-        <li><button> Agenda tu cita </button></li>
+        <li><a href="#ad"> Acerca de </a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#esp"> Especialidades</a></li>
+        <li><a> Agenda tu cita </a></li>
         </ul>
     </nav>
-
+        </div>
     <div class="text-main">
-        <h2>Acerca de nosotros</h2>
+        <h2 id="ad">Acerca de nosotros</h2>
             <p>Texto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de relleno</p>
     </div>   
     <div class="text-main">
-        <h2>Contacto</h2>
+        <h2 id="contact">Contacto</h2>
             <p>Atención personalizada o dudas contactate a número: </p>
             <p id="datosImp">5543363407</p>
             <p>Horarios: </p>
@@ -44,7 +45,7 @@
             <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.6843144589475!2d-99.15209292400102!3d19.38281714226734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffaa4b72c58d%3A0x76b7aa2d685b4dd!2sLABORATORIO%20CLINICO%20LA%20PIEDAD!5e0!3m2!1ses!2smx!4v1792889268363!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
     <div class="text-main"> 
-        <h2 class="esp">Especialidades</h2>
+        <h2 class="esp" id="esp">Especialidades</h2>
         <p>Tenemos una amplia variedad de especialidades, selecciona la opción de tu preferencia</p>
         <div class="container-button">
             <button class="botonesp" id="botonDial" type="button">
@@ -67,5 +68,30 @@
                         <button id="modal-close" type="button">Cerrar</button>
             </dialog>
     </div>
+    <div class="text-main"> 
+        <h2 class="esp" id="esp">Especialidades</h2>
+        <p>Tenemos una amplia variedad de especialidades, selecciona la opción de tu preferencia</p>
+        <div class="container-button">
+            <button class="botonesp" id="botonDial" type="button">
+                <span class="text">Dialisis</span>
+            </button>
+
+            <button class="botonesp"  id="botonRX" type="button">
+                <span class="text">Rayos X</span>
+            </button>
+            <button class="botonesp"  id="botonTS" type="button">
+                <span class="text">Toma de sangre</span>
+            </button>
+            <button class="botonesp" id="botonCon" type="button"><span class="text">Consulta</span></button>
+            <button class="botonesp" id="botonPP" type="button"><span class="text">Papanicolao</span></button>
+        </div>
+
+            <dialog id="modal-info1" aria-labelledby="modal-title">
+                        <h2 id="modal-title"></h2>
+                        <p id="modal-description"></p>
+                        <button id="modal-close" type="button">Cerrar</button>
+            </dialog>
+    </div>
+    
 </body>
 </html>

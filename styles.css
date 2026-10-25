@@ -1,11 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
+html{
+  scroll-behavior: smooth;
+}
+h2[id]{
+  scroll-margin-top: 20px;
+}
+
 body{
     margin: 0;
     padding: 0;
 }
 
 /*logo*/
+
+#logf{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffff;
+}
+
 #head{
   justify-content: center;
     display: flex;
@@ -64,6 +79,10 @@ text-align: center;
     justify-content: center;
     align-items: center;
     padding: 0;
+    /* fija la barra hasta que se llega a arriba y evita que los mapas se transapasen la barra */
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 #main_bar ul{
@@ -76,7 +95,7 @@ text-align: center;
     list-style: none;
 }
 
-#main_bar button{
+#main_bar a{
     all: unset;
 
     width: 150px;
@@ -230,7 +249,7 @@ text-align: center;
     margin: 0;
     gap: 5px 10px;
   }
-  #main_bar button {
+  #main_bar a {
     width: auto;
     font-size: 16px;
     padding: 5px 8px;
