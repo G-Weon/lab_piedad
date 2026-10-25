@@ -101,7 +101,8 @@ text-align: center;
 /*FIN DE Navegador de opciones*/
 
 /*Titutlos h2*/
-.button-main{
+.text-main{
+  flex-wrap:wrap ;
   display: flex;
   padding: 2rem ;
   font-size: 25px;
@@ -109,34 +110,42 @@ text-align: center;
 
   font-family: "Orbitron", sans-serif;
 }
+/* Contacto*/
+
+#datosImp{
+  display: inline-block;
+  text-align: center;
+  font-size: 29px;
+  font-weight: bolder;
+  color: #8a200e;
+}
+.map{
+  display: block;
+  margin-left: auto;
+  margin-right:auto ;
+  max-width: 100%;
+}
 /*Texto*/
-.button-main p{
+.text-main p{
   font-size: 25px;
   color: black;
   display: flex;
   padding: 2rem;
-font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
+.container-button{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  flex-basis: 100%;
 
-#modal-info1 {
-    width: min(90%, 450px);
-    padding: 24px;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgb(0 0 0 / 20%);
+  padding: 3rem;
 }
- 
-#modal-info1::backdrop {
-    background-color: rgb(0 0 0 / 55%);
-}
- 
-#modal-info1 h2 {
-    margin-top: 0;
-}
- 
-#modal-close {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
+.botonesp{
+  border-radius: 16px;
+  margin-bottom: 10px;
+  height: 80px;
+  width: 200px;
+
+} 
