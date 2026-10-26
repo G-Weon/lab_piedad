@@ -78,3 +78,16 @@ botonEspecialidadPP.addEventListener("click", () => {
 botonCerrar.addEventListener("click", () => {
     modal.close();
 });
+
+
+//experimental
+
+const cabecera = document.getElementById('logf');
+
+function ajustarMargen() {
+  document.documentElement.style.setProperty('--alto-cabecera', cabecera.offsetHeight + 'px');
+}
+
+ajustarMargen();
+window.addEventListener('resize', ajustarMargen);
+window.addEventListener('load', ajustarMargen);
