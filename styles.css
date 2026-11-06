@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
 
 html{
   scroll-behavior: smooth;
 }
 /* ancla de menú*/
-h2[id]{
+h2[id], .text-main[id]{
   /* experimental */
   scroll-margin-top: calc(var(--alto-cabecera, 100px) + 10px);
+  
 }
 
 body{
@@ -107,7 +110,8 @@ text-align: center;
     width: 150px;
     height: 30px;
     font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: bold;
     background: transparent;
     border: none;
     position: relative;
@@ -137,6 +141,8 @@ text-align: center;
   border: calc(var(--size-letter) / 6) solid var(--c2);
   border-radius: 0.2em;
   cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bolder;
 
   overflow: hidden;
   position: relative;
@@ -185,11 +191,35 @@ text-align: center;
 .text-main{
   flex-wrap:wrap ;
   display: flex;
-  padding: 2rem ;
+  padding: 10px ;
   font-size: 25px;
   color: #1148a7;
+  padding: 1.5rem 2rem;
 
-  font-family: "Orbitron", sans-serif;
+  font-family: "Cormorant Garamond", serif;
+
+}
+
+/* MODIFICADO: espacio del bloque y alineación de los títulos */
+.text-main{
+  padding: 1.5rem 2rem;   /* arriba/abajo 1.5rem, lados 2rem */
+}
+.text-main h2{
+  flex-basis: 100%;       /* el título ocupa su propia línea */
+  margin: 0 0 0.75rem 0;  /* separación con el texto de abajo */
+}
+.titulos{
+  font-weight: bold;
+}
+
+/* MODIFICADO: los dos párrafos de "Acerca de" (el id gana a .text-main p) */
+#textoinfo, #lemainfo{
+  display: block;
+  flex-basis: 100%;
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 2rem;  
+  font-size: 25px;
+  font-family: "Cormorant Garamond", serif;
 }
 /* Contacto*/
 
@@ -200,12 +230,41 @@ text-align: center;
   font-weight: bolder;
   color: #8a200e;
 }
-.map{
+/* Mapa Leaflet */
+#mapa{
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
   width: 800px;
+  height: 400px;
+  /* crea su propio contexto de apilamiento para que el mapa no tape la barra sticky */
+  position: relative;
+  z-index: 0;
+}
+/* el popup hereda estilos de .text-main; se reinician aquí */
+#mapa .leaflet-popup-content{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: black;
+}
+#mapa .leaflet-popup-content h2{
+  font-size: 18px;
+  margin: 0 0 6px 0;
+  color: #00529b;
+}
+#mapa .leaflet-popup-content p{
+  display: block;
+  font-size: 14px;
+  padding: 0;
+  margin: 4px 0;
+}
+
+/* Foto del pop up */
+.foto-tienda{
+width: 100%; height: 140px;
+    /*recorta la imagen para mantenerse en la medida elegida*/
+object-fit: cover;
 }
 /*Texto*/
 .text-main p{
@@ -236,12 +295,17 @@ text-align: center;
 
 @media (max-width: 768px) {
 
-  h2[id] {
+  h2[id], .text-main[id]{
     scroll-margin-top: 10px;
     }
 
   #logf {
     position: static;
+  }
+    #main_bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   /* Encabezado */
@@ -299,6 +363,10 @@ text-align: center;
     font-size: 18px;
     padding: 0.5rem 0;
   }
+  #textoinfo, #lemainfo {
+    padding: 0.5rem 0;
+    font-size: 18px;
+  }
 
   /* Botones de especialidades */
   .container-button {
@@ -312,8 +380,8 @@ text-align: center;
   }
 
   /* Mapa */
-  .map {
+  #mapa {
     width: 100%;
-    height: 250px;
-  } 
+    height: 300px;
+  }
 }

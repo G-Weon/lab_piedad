@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
     <title>La piedad</title>
             <script src="app.js" defer></script>
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
     <div id="logf">
@@ -32,23 +34,24 @@
         </ul>
     </nav>
         </div>
-    <div class="text-main">
-        <h2 id="ad">Acerca de nosotros</h2>
-            <p>Texto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de rellenoTexto de relleno</p>
+    <div class="text-main" id="ad">
+            <p id="textoinfo">Laboratorio Clínico La Piedad es un centro de atención médica y diagnóstico que ofrece servicios de laboratorio clínico y estudios especializados, enfocados en contribuir al cuidado y seguimiento de la salud de nuestros pacientes. Contamos con una amplia variedad de estudios clínicos, entre los que se encuentran análisis de sangre, química sanguínea, biometría hemática, examen general de orina, perfiles hormonales y pruebas rápidas, entre otros. Además, ofrecemos servicios complementarios de diagnóstico, como ultrasonidos, electrocardiogramas, rayos X y estudios especializados, así como atención médica en diversas especialidades. Nuestro objetivo es brindar una atención accesible y profesional, facilitando a nuestros pacientes el acceso a estudios que permitan a sus médicos obtener información útil para la prevención, detección y seguimiento de distintas condiciones de salud.</p>
+            <p id="lemainfo"><strong>En Laboratorio Clínico La Piedad, tu salud es nuestra prioridad.</strong></p>
+    </div>
     </div>   
     <div class="text-main">
-        <h2 id="contact">Contacto</h2>
-            <p>Atención personalizada o dudas contactate a número: </p>
-            <p id="datosImp">5543363407</p>
+        <h2 class="titulos" id="contact">Contacto</h2>
+            <p id="textoinfo">Si te interesa recibir más información contactanos </p>
+            <p id="datosImp" id="textoinfo">Modificar cuadro de contacto</p>
             <div>
-            <p>Horarios: </p>
-            <P> Lunes - Viernes 7:00 AM a 8:00 PM Sabados 7:00 AM a 5:00PM </p>
+            <p id="textoinfo">Horarios: </p>
+            <P id="textoinfo"> Lunes - Viernes 7:00 AM a 8:00 PM Sabados 7:00 AM a 5:00PM </p>
             </div>
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.6843144589475!2d-99.15209292400102!3d19.38281714226734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffaa4b72c58d%3A0x76b7aa2d685b4dd!2sLABORATORIO%20CLINICO%20LA%20PIEDAD!5e0!3m2!1ses!2smx!4v1792889268363!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div id="mapa"></div>
     </div>
     <div class="text-main"> 
-        <h2 class="esp" id="esp">Especialidades</h2>
-        <p>Tenemos una amplia variedad de especialidades, selecciona la opción de tu preferencia</p>
+        <h2 class="titulos esp" id="esp">Especialidades</h2>
+        <p id="textoinfo">Tenemos una amplia variedad de especialidades, selecciona la opción de tu preferencia</p>
         <div class="container-button">
             <button class="botonesp" id="botonDial" type="button">
                 <span class="text">Dialisis</span>
