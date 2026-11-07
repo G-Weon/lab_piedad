@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-
-
 html{
   scroll-behavior: smooth;
 }
@@ -20,7 +16,8 @@ body{
 /*logo*/
 
 #logf{
-  position: sticky;
+
+  display: static;
   top: 0;
   z-index: 80;
   background: #ffff;
@@ -85,9 +82,6 @@ text-align: center;
     align-items: center;
     padding: 0;
     /* fija la barra hasta que se llega a arriba y evita que los mapas se transapasen la barra */
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 #main_bar ul{
@@ -101,11 +95,17 @@ text-align: center;
 }
 
 #main_bar a{
-    all: unset;
 
+          /*unset
+    all: focus-visible;
+          */
     /*mantiene la barra sin tapar el encabezado de la seccion (experimental)*/
     flex: 0 0 auto;
     width: auto ;
+
+    text-decoration: none;
+    flex: 0 0 auto;
+    width: auto;
 
     width: 150px;
     height: 30px;
@@ -126,7 +126,10 @@ text-align: center;
     user-select: none;
     touch-action: manipulation;
 }
-
+#main_bar a:focus-visible{
+    outline: 3px solid #00529b;
+    outline-offset: 2px;
+}
 /*FIN DE Navegador de opciones*/
 
 /*Botones*/
@@ -213,7 +216,7 @@ text-align: center;
 }
 
 /* MODIFICADO: los dos párrafos de "Acerca de" (el id gana a .text-main p) */
-#textoinfo, #lemainfo{
+.text-main .textoinfo, #lemainfo{
   display: block;
   flex-basis: 100%;
   margin: 0;
@@ -293,20 +296,7 @@ object-fit: cover;
 
 /* adaptador movil*/
 
-@media (max-width: 768px) {
-
-  h2[id], .text-main[id]{
-    scroll-margin-top: 10px;
-    }
-
-  #logf {
-    position: static;
-  }
-    #main_bar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+@media (max-width: 768px) {  
 
   /* Encabezado */
   #head {
@@ -363,7 +353,7 @@ object-fit: cover;
     font-size: 18px;
     padding: 0.5rem 0;
   }
-  #textoinfo, #lemainfo {
+  .textoinfo .textoinfo, #lemainfo {
     padding: 0.5rem 0;
     font-size: 18px;
   }
