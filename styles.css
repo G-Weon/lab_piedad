@@ -80,8 +80,6 @@ text-align: center;
     background-color: rgb(159, 232, 159);
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 0;
     /* fija la barra hasta que se llega a arriba y evita que los mapas se transapasen la barra */
 }
 
@@ -89,42 +87,30 @@ text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 300px;
+    align-items: center;
+    gap: 30px;
     width: 100%;
-    gap: 15px;
+    margin: 0;
+    padding: 10px 0;
     list-style: none;
 }
 
-#main_bar a{
-
-          /*unset
-    all: focus-visible;
-          */
-    /*mantiene la barra sin tapar el encabezado de la seccion (experimental)*/
-    flex: 0 0 auto;
-    width: auto ;
-
+#main_bar a {
     text-decoration: none;
-    flex: 0 0 auto;
-
-    width: 150px;
-    height: 30px;
     font-size: 25px;
     font-family: "Cormorant Garamond", serif;
     font-weight: bold;
-    background: transparent;
-    border: none;
-    position: relative;
     color: #4375ca;
-    cursor: pointer;
-    z-index: 1;
+
     padding: 5px 10px;
+    white-space: nowrap;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap;
+
+    cursor: pointer;
     user-select: none;
-    touch-action: manipulation;
 }
 #main_bar a:focus-visible{
     outline: 3px solid #00529b;
@@ -189,8 +175,85 @@ text-align: center;
   scale: 0.98;
   filter: brightness(0.9);
 }
+/*Modal*/
+#modal-info1{
+  width: min(560px, 92vw);
+  max-height: min(85vh, 640px);
+  padding: 0;
+  border: 2px solid #72a138;
+  border-radius: 16px;
+  background: #fff;
+  color: #1a1a1a;
+  font-family: Lora, serif;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 40, 80, .35);
+}
 
+#modal-info1[open]{
+  display: flex;
+  flex-direction: column;
+  animation: modal-entra 260ms cubic-bezier(.2, .8, .2, 1);
+}
+#modal-info1::backdrop{
+  background: rgba(0, 32, 64, .55);
+  backdrop-filter: blur(5px);
+}
+@keyframes modal-entra{
+  from{ opacity: 0; transform: translateY(14px) scale(.97); }
+  to{ opacity: 1; transform: none; }
+}
 
+#modal-info1 h2{
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 1.5rem 1.75rem 1rem;
+  background: #f3fbe9;
+  border-bottom: 2.3px solid #72a138;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #00529b;
+}
+
+#modal-info1 p{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: block;
+  margin: 0;
+  padding: 1.25rem 1.75rem;
+  font-family: Lora, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+/* Botón Cerrar: mismo azul de los botones de servicios */
+#modal-info1 #modal-close{
+  flex: 0 0 auto;
+  align-self: flex-end;
+  margin: 0 1.75rem 1.25rem;
+  min-height: 44px;
+  padding: .6rem 1.6rem;
+  border: 2px solid #00529b;
+  border-radius: 10px;
+  background: transparent;
+  color: #00529b;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+#modal-info1 #modal-close:hover{
+  background: #00529b;
+  color: #fff;
+}
+#modal-info1 #modal-close:focus-visible{
+  outline: 3px solid #72a138;
+  outline-offset: 2px;
+}
 /*Titutlos h2*/
 .text-main{
   flex-wrap:wrap ;
@@ -204,7 +267,6 @@ text-align: center;
 
 }
 
-/* MODIFICADO: espacio del bloque y alineación de los títulos */
 .text-main{
   padding: 1.5rem 2rem;   /* arriba/abajo 1.5rem, lados 2rem */
 }
@@ -216,7 +278,6 @@ text-align: center;
   font-weight: bold;
 }
 
-/* MODIFICADO: los dos párrafos de "Acerca de" (el id gana a .text-main p) */
 .text-main .textoinfo, #lemainfo{
   display: block;
   flex-basis: 100%;
@@ -252,7 +313,7 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 90px;
+  width: 80px;
   height: 80px;
   margin: 0 auto;            /* lo centra dentro del recuadro */
   border-radius: 50%;

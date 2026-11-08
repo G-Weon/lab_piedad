@@ -37,11 +37,6 @@ const contenido = `
     <a class="btn-llegar" href="${urlRuta}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
 
 `;
-
-marcador.bindPopup(contenido, {
-    maxWidth: 280
-    
-});
 const esMovil = window.matchMedia("(max-width: 768px)").matches;
 
 marcador.bindPopup(contenido, {
@@ -53,4 +48,3 @@ marcador.bindPopup(contenido, {
 if (!esMovil) {
     marcador.openPopup();
 }
-marcador.openPopup();

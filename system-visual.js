@@ -3,12 +3,17 @@ const modal = document.getElementById("modal-info1");
 const titulo = document.getElementById("modal-title");
 const descripcion = document.getElementById("modal-description");
 const botonCerrar = document.getElementById("modal-close");
-
-const botonEspecialidad = document.getElementById("botonDial");
-const botonEspecialidadTS= document.getElementById("botonTS");
+const botonEspecialidad = document.getElementById("botonUltra");
 const botonEspecialidadRX= document.getElementById("botonRX");
-const botonEspecialidadCon= document.getElementById("botonCon");
+const botonEspecialidadEC= document.getElementById("botonEC");
+const botonEspecialidadEL = document.getElementById("botonEL");
 const botonEspecialidadPP= document.getElementById("botonPP");
+const botonEspecialidadDen = document.getElementById("botonDen");
+const botonEspecialidadColpo = document.getElementById("botonColpo");
+const botonEspecialidadEspi = document.getElementById("botonEspi");
+const botonEspecialidadEndoCol = document.getElementById("botonEndoCol");
+const botonEspecialidadZombi = document.getElementById("botonZombi");
+
 //Catalago
 
 
@@ -16,7 +21,6 @@ const especialidades = {
     ultrasonido:{
         nombre: "Ultrasonido",
         descripcion: "El ultrasonido (o ecografía) es un estudio de diagnóstico médico no invasivo y seguro que utiliza ondas sonoras de alta frecuencia (en tiempo real) para crear imágenes del interior del cuerpo, sin emplear radiación ionizante."
-
     },
     rayosX:{
         nombre: "Rayos X",
@@ -26,31 +30,35 @@ const especialidades = {
         nombre: "Electrocardiograma",
         descripcion: "Un electrocardiograma (ECG o EKG) es un estudio médico rápido, indoloro y no invasivo que registra la actividad eléctrica del corazón."
     },
-       estLab:{
+        estLab:{
         nombre: "Estudios de laboratorio",
         descripcion: "Contamos con una amplia variedad de estudios de laboratorio:"
     },
-       Papanicolao:{
-        nombre: "Papanicolao",
-        descripcion: "Debi buscar que es esto LOL"
+     papa:{
+        nombre: "Papanicolaou",
+        descripcion: "El Papanicolaou (también conocido como citología vaginal o cervical) es un examen médico rápido y sencillo que consiste en recolectar células del cuello uterino para examinarlas bajo el microscopio."
+    },
+        den:{
+        nombre: "Densitometría",
+        descripcion: "La densitometría ósea (conocida también como DEXA o DXA, por sus siglas en inglés Dual-Energy X-ray Absorptiometry) es una prueba médica de diagnóstico por imagen que mide la cantidad de calcio y otros minerales presentes en los huesos (la densidad mineral ósea)."
+    },
+        colpo:{
+        nombre: "Colposcopia",
+        descripcion: "Una colposcopia es un procedimiento médico ginecológico que permite examinar de cerca el cuello uterino, la vagina y la vulva utilizando un instrumento con luz y lentes de aumento llamado colposcopio"
+    },
+        espi:{
+        nombre: "Espirometría",
+        descripcion: "La espirometría es una prueba médica no invasiva y rápida que mide el volumen y la velocidad del flujo de aire que entra y sale de los pulmones"
+    },
+        endo:{
+        nombre: "Endoscopia/Colonoscopia",
+        descripcion: "La endoscopia alta y la colonoscopia son procedimientos médicos ambulatorios que utilizan tubos delgados y flexibles con cámaras (endoscopios) para visualizar el interior del aparato digestivo. Se realizan bajo sedación para evitar molestias, permitiendo tanto diagnosticar enfermedades como extirpar lesiones en una sola sesión."
+    },
+        zombi:{
+        nombre: "PCR COVID-19",
+        descripcion: "La prueba PCR multiplex (RT-qPCR) para COVID-19 e Influenza (A y B) es un estudio de diagnóstico molecular que detecta y diferencia de forma simultánea el material genético (ARN) del virus SARS-CoV-2 y de los virus de la influenza A y B a partir de una única toma de muestra."
     }
 }
-/*
-botonEspecialidad.addEventListener("click", () => {
-    titulo.textContent = especialidades.dialisis.nombre;
-    descripcion.textContent = especialidades.dialisis.descripcion;
-    
-    modal.showModal();
-});
-
-botonEspecialidadRX.addEventListener("click", () => {
-    titulo.textContent = especialidades.rayosX.nombre;
-    descripcion.textContent = especialidades.rayosX.descripcion;
-    
-    modal.showModal();
-});
-*/
-
 //(clave) es el parametro que se le ingresa, en este caso el nombre de la variable de la especialidad
 function abrirModal(clave) {
     titulo.textContent = especialidades[clave].nombre;
@@ -63,33 +71,45 @@ botonEspecialidad.addEventListener("click", () => {
 botonEspecialidadRX.addEventListener("click", () => {
     abrirModal("rayosX");
 });
-botonEspecialidadTS.addEventListener("click", () => {
+botonEspecialidadEC.addEventListener("click", () => {
     abrirModal("electro");
 });
-botonEspecialidadCon.addEventListener("click", () => {
+botonEspecialidadEL.addEventListener("click", () => {
     abrirModal("estLab");
 });
 botonEspecialidadPP.addEventListener("click", () => {
-    abrirModal("Papanicolao");
+    abrirModal("papa");
 });
 
+botonEspecialidadDen.addEventListener("click", () => {
+    abrirModal("den");
+});
 
+botonEspecialidadColpo.addEventListener("click", () => {
+    abrirModal("colpo");
+});
+botonEspecialidadEspi.addEventListener("click", () => {
+    abrirModal("espi");
+});
+
+botonEspecialidadEndoCol.addEventListener("click", () => {
+    abrirModal("endo");
+});
+
+botonEspecialidadZombi.addEventListener("click", () => {
+    abrirModal("zombi");
+});
 // Cerrar el modal
 botonCerrar.addEventListener("click", () => {
     modal.close();
 });
-
-
 //experimental (investigar que es esto)
 
 //Control de main_bar 
 const cabecera = document.getElementById('logf');
-
 function ajustarMargen() {
   document.documentElement.style.setProperty('--alto-cabecera', cabecera.offsetHeight + 'px');
 }
-
 ajustarMargen();
 window.addEventListener('resize', ajustarMargen);
 window.addEventListener('load', ajustarMargen);
-
