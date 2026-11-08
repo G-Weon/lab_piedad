@@ -25,24 +25,32 @@ const marcador = L.marker(ubicacion, {
     alt: "Ubicación del laboratorio"
 }).addTo(mapa);
 
+const destino = encodeURIComponent(tienda.lat + "," + tienda.lng);
+
+const urlRuta = "https://www.google.com/maps/dir/?api=1&destination=" + destino + "&travelmode=driving";
+
 const contenido = `
     <h2>${tienda.nombre}</h2>
     <img class="foto-tienda" src="${tienda.foto}" alt="Fachada de la tienda" onerror="this.style.display='none'">
     <p>${tienda.direccion}</p>
     <p>${tienda.horario}</p>
+    <a class="btn-llegar" href="${urlRuta}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+
 `;
 
 marcador.bindPopup(contenido, {
     maxWidth: 280
+    
 });
+const esMovil = window.matchMedia("(max-width: 768px)").matches;
+
+marcador.bindPopup(contenido, {
+    maxWidth: esMovil ? 220 : 280,
+    autoPanPadding: [10, 10]
+});
+
+// En escritorio se abre solo; en móvil se abre al tocar el marcador
+if (!esMovil) {
+    marcador.openPopup();
+}
 marcador.openPopup();
-
-const destino = encodeURIComponent(
- tienda.lat + "," + tienda.lng
-);
-
-const urlRuta = "https://www.google.com/maps/dir/?api=1"
- + "&destination=" + destino
-        /* walking para ruta caminando */
- + "&travelmode=driving";
-document.getElementById("como-llegar").href = urlRuta;
