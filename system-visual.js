@@ -13,22 +13,22 @@ const botonEspecialidadPP= document.getElementById("botonPP");
 
 
 const especialidades = {
-    dialisis:{
-        nombre: "Dialisis",
-        descripcion: "oidfhjds"
+    ultrasonido:{
+        nombre: "Ultrasonido",
+        descripcion: "El ultrasonido (o ecografía) es un estudio de diagnóstico médico no invasivo y seguro que utiliza ondas sonoras de alta frecuencia (en tiempo real) para crear imágenes del interior del cuerpo, sin emplear radiación ionizante."
 
     },
     rayosX:{
         nombre: "Rayos X",
-        descripcion: "Rayos x por rasho laser"
+        descripcion: "Una radiografía o estudio de rayos X es una prueba médica rápida e indolora que utiliza una pequeña dosis de radiación ionizante para generar imágenes en blanco, negro y grises del interior del cuerpo."
     },
-    TSangre: {
-        nombre: "Toma de sangre",
-        descripcion: "Toma de sangre en tubos"
+    electro: {
+        nombre: "Electrocardiograma",
+        descripcion: "Un electrocardiograma (ECG o EKG) es un estudio médico rápido, indoloro y no invasivo que registra la actividad eléctrica del corazón."
     },
-       Consulta:{
-        nombre: "Consulta general",
-        descripcion: "Revision general, vertificados medicos, bla, bla."
+       estLab:{
+        nombre: "Estudios de laboratorio",
+        descripcion: "Contamos con una amplia variedad de estudios de laboratorio:"
     },
        Papanicolao:{
         nombre: "Papanicolao",
@@ -58,16 +58,16 @@ function abrirModal(clave) {
     modal.showModal();
 }
 botonEspecialidad.addEventListener("click", () => {
-    abrirModal("dialisis");
+    abrirModal("ultrasonido");
 });
 botonEspecialidadRX.addEventListener("click", () => {
     abrirModal("rayosX");
 });
 botonEspecialidadTS.addEventListener("click", () => {
-    abrirModal("TSangre");
+    abrirModal("electro");
 });
 botonEspecialidadCon.addEventListener("click", () => {
-    abrirModal("Consulta");
+    abrirModal("estLab");
 });
 botonEspecialidadPP.addEventListener("click", () => {
     abrirModal("Papanicolao");
